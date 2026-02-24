@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | Raj Dental Hospital — Best Dental Clinic in Ranchi</title>
+    <meta name="description"
+        content="Explore the gallery of Raj Dental Hospital, Ranchi. See our modern clinic, advanced dental equipment, and happy patients. Trusted dental hospital at Booty More, Ranchi.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        /* ===== GALLERY PAGE STYLES ===== */
+
+        /* Hero */
+        .gallery-hero {
+            padding: 128px 32px 96px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            margin-top: 81px;
+            background: #f8fafc;
+        }
+
+        /* Decorative blobs */
+        .gallery-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 384px;
+            height: 384px;
+            border-radius: 50%;
+            background: #10b77f;
+            filter: blur(32px);
+            opacity: 0.05;
+            pointer-events: none;
+        }
+
+        .gallery-hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 384px;
+            height: 384px;
+            border-radius: 50%;
+            background: #0f172a;
+            filter: blur(32px);
+            opacity: 0.05;
+            pointer-events: none;
+        }
+
+        .gallery-hero h1 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 800;
+            font-size: 60px;
+            line-height: 60px;
+            letter-spacing: -1.5px;
+            color: #0f172a;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .gallery-hero h1 span {
+            color: #10b77f;
+        }
+
+        .gallery-hero p {
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 29.25px;
+            color: #475569;
+            max-width: 672px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Filter + Grid Section */
+        .gallery-section {
+            background: #fff;
+            padding: 80px 32px;
+        }
+
+        .gallery-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 64px;
+        }
+
+        /* Filter Tabs */
+        .gallery-filters {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 14px;
+            padding: 8px 24px;
+            border-radius: 9999px;
+            border: none;
+            cursor: pointer;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        .filter-btn.active {
+            background: #10b77f;
+            color: #fff;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+        }
+
+        .filter-btn:not(.active) {
+            background: #f1f5f9;
+            color: #475569;
+        }
+
+        .filter-btn:not(.active):hover {
+            background: rgba(16, 183, 127, 0.1);
+            color: #10b77f;
+        }
+
+        /* Gallery Grid — 3 cols */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+
+        .gallery-card {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+            transition: transform 0.25s, box-shadow 0.25s;
+            cursor: pointer;
+        }
+
+        .gallery-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .gallery-card[data-hidden="true"] {
+            display: none;
+        }
+
+        .gallery-card-img {
+            width: 100%;
+            height: 288px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .gallery-card-img img {
+            width: 100%;
+            height: 133.33%;
+            object-fit: cover;
+            position: absolute;
+            top: -16.67%;
+            left: 0;
+            transition: transform 0.4s;
+        }
+
+        .gallery-card:hover .gallery-card-img img {
+            transform: scale(1.05);
+        }
+
+        .gallery-card-body {
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 8.5px;
+        }
+
+        .card-tag {
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            font-size: 12px;
+            letter-spacing: 0.6px;
+            text-transform: uppercase;
+            color: #10b77f;
+        }
+
+        .gallery-card-body h3 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 28px;
+            color: #0f172a;
+        }
+
+        .gallery-card-body p {
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            line-height: 20px;
+            color: #64748b;
+        }
+
+        /* Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            background: rgba(15, 23, 42, 0.93);
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+        }
+
+        .lightbox.open {
+            display: flex;
+        }
+
+        .lightbox-img {
+            max-width: 90vw;
+            max-height: 85vh;
+            border-radius: 12px;
+            object-fit: contain;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 24px;
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: #fff;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            font-size: 22px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+        }
+
+        .lightbox-close:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .lightbox-caption {
+            position: absolute;
+            bottom: 24px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(15, 23, 42, 0.8);
+            color: #fff;
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            padding: 10px 24px;
+            border-radius: 9999px;
+            white-space: nowrap;
+        }
+
+        /* Value Props section */
+        .value-section {
+            background: #f8fafc;
+            padding: 80px 32px;
+        }
+
+        .value-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 64px;
+        }
+
+        .value-section h2 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 800;
+            font-size: 48px;
+            line-height: 48px;
+            color: #0f172a;
+            text-align: center;
+        }
+
+        .value-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+
+        .value-card {
+            background: #fff;
+            border: 1px solid #f1f5f9;
+            border-radius: 12px;
+            padding: 32px;
+            text-align: center;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            min-height: 180px;
+            justify-content: center;
+            transition: transform 0.2s;
+        }
+
+        .value-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .value-card-icon {
+            width: 48px;
+            height: 48px;
+            margin-bottom: 4px;
+        }
+
+        .value-card h4 {
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 28px;
+            color: #0f172a;
+        }
+
+        .value-card p {
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            line-height: 20px;
+            color: #475569;
+        }
+
+        /* Dark CTA */
+        .gallery-cta-wrap {
+            background: #f8fafc;
+            padding: 0 32px 64px;
+        }
+
+        .gallery-cta {
+            max-width: 1280px;
+            margin: 0 auto;
+            background: #0f172a;
+            border-radius: 24px;
+            padding: 64px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+
+        .gallery-cta h2 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 800;
+            font-size: 36px;
+            line-height: 40px;
+            color: #fff;
+            margin-bottom: 16px;
+        }
+
+        .gallery-cta p {
+            font-family: 'Inter', sans-serif;
+            font-size: 18px;
+            line-height: 28px;
+            color: #94a3b8;
+            max-width: 672px;
+            margin: 0 auto 32px;
+        }
+
+        .cta-btns {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-cta-green {
+            background: #10b77f;
+            color: #0f172a;
+            font-family: 'Inter', sans-serif;
+            font-weight: 800;
+            font-size: 18px;
+            padding: 16px 40px;
+            border-radius: 12px;
+            text-decoration: none;
+            display: inline-block;
+            transition: opacity 0.2s;
+        }
+
+        .btn-cta-green:hover {
+            opacity: 0.9;
+            color: #0f172a;
+        }
+
+        .btn-cta-ghost {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(2px);
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            font-size: 18px;
+            padding: 16px 40px;
+            border-radius: 12px;
+            text-decoration: none;
+            display: inline-block;
+            transition: background 0.2s;
+        }
+
+        .btn-cta-ghost:hover {
+            background: rgba(255, 255, 255, 0.15);
+            color: #fff;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .value-cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 640px) {
+            .gallery-hero h1 {
+                font-size: 36px;
+                line-height: 1.1;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .value-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-cta {
+                padding: 40px 24px;
+            }
+
+            .gallery-cta h2 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <img src="../assets/images/953196547354cf94a3b4b38155a605d28f735e7d.svg" alt="Raj Dental Hospital"
+                    class="nav-brand-icon">
+                <div class="nav-brand-text">
+                    <div class="brand-title">Raj <span>Dental</span></div>
+                    <div class="brand-subtitle">Booty More, Ranchi</div>
+                </div>
+            </div>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="index.html#services" class="nav-link">Services</a>
+                <a href="why-choose-us.html" class="nav-link">Why Us</a>
+                <a href="gallery.html" class="nav-link" style="color: #10b77f; font-weight: 700;">Gallery</a>
+                <a href="index.html#reviews" class="nav-link">Reviews</a>
+                <a href="index.html#book" class="btn-book-now">Book Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== HERO ===== -->
+    <section class="gallery-hero">
+        <h1>Raj Dental Hospital <span>Gallery</span></h1>
+        <p>Take a virtual tour of our modern, hygienic, and patient-friendly dental clinic at Krishna Market, Booty
+            More, Ranchi. Raj Dental Hospital is committed to providing the best dental care in Ranchi with advanced
+            equipment and a warm, welcoming environment for all our patients.</p>
+    </section>
+
+    <!-- ===== FILTERABLE GALLERY GRID ===== -->
+    <section class="gallery-section">
+        <div class="gallery-inner">
+
+            <!-- Filter Tabs -->
+            <div class="gallery-filters">
+                <button class="filter-btn active" data-filter="all">All Photos</button>
+                <button class="filter-btn" data-filter="interior">Interior</button>
+                <button class="filter-btn" data-filter="equipment">Equipment</button>
+                <button class="filter-btn" data-filter="patient-care">Patient Care</button>
+            </div>
+
+            <!-- Photo Grid -->
+            <div class="gallery-grid" id="galleryGrid">
+
+                <!-- 1: Reception Area -->
+                <div class="gallery-card" data-category="interior"
+                    onclick="openLightbox('../assets/images/1c1259cc19b6a074d60cd1c081fa647ffaf5ffe2.png','Modern Reception Area')">
+                    <div class="gallery-card-img">
+                        <img src="../assets/images/1c1259cc19b6a074d60cd1c081fa647ffaf5ffe2.png"
+                            alt="Modern Reception Area" loading="lazy">
+                    </div>
+                    <div class="gallery-card-body">
+                        <span class="card-tag">Interior</span>
+                        <h3>Our Clinic</h3>
+                        <p>Warm and welcoming reception area designed for patient comfort at Raj Dental Hospital,
+                            Ranchi.</p>
+                    </div>
+                </div>
+
+                <!-- 2: Treatment Room -->
+                <div class="gallery-card" data-category="interior"
+                    onclick="openLightbox('../assets/images/ddd71d8cc5e5b49ced26137fc09c5cf4d796d957.png','Advanced Treatment Suite')">
+                    <div class="gallery-card-img">
+                        <img src="../assets/images/ddd71d8cc5e5b49ced26137fc09c5cf4d796d957.png"
+                            alt="Advanced Treatment Suite" loading="lazy">
+                    </div>
+                    <div class="gallery-card-body">
+                        <span class="card-tag">Interior</span>
+                        <h3>Our Clinic</h3>
+                        <p>State-of-the-art dental treatment suite at our Ranchi hospital, designed for maximum patient
+                            comfort.</p>
+                    </div>
+                </div>
+
+                <!-- 3: Digital X-ray Suite -->
+                <div class="gallery-card" data-category="equipment"
+                    onclick="openLightbox('../assets/images/800f2c305363a22a74257bc39245931133b3cf74.png','Digital X-ray Suite')">
+                    <div class="gallery-card-img">
+                        <img src="../assets/images/800f2c305363a22a74257bc39245931133b3cf74.png"
+                            alt="Digital X-ray Suite" loading="lazy">
+                    </div>
+                    <div class="gallery-card-body">
+                        <span class="card-tag">Equipment</span>
+                        <h3>Advanced Equipment</h3>
+                        <p>Digital X-ray suite with low-radiation imaging for precise dental diagnosis in Ranchi.</p>
+                    </div>
+                </div>
+
+                <!-- 4: Personalized Care -->
+                <div class="gallery-card" data-category="patient-care"
+                    onclick="openLightbox('../assets/images/23b7a1571eeb19753403370cafec8660471e73a5.png','Personalized Care')">
+                    <div class="gallery-card-img">
+                        <img src="../assets/images/23b7a1571eeb19753403370cafec8660471e73a5.png"
+                            alt="Personalized Patient Care" loading="lazy">
+                    </div>
+                    <div class="gallery-card-body">
+                        <span class="card-tag">Patient Care</span>
+                        <h3>Happy Patients</h3>
+                        <p>Dr. Vinit Raj providing personalized dental care and ensuring every patient feels at ease.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 5: Sterilization Zone -->
+                <div class="gallery-card" data-category="equipment"
+                    onclick="openLightbox('../assets/images/6056468a6ce6a37a659748db37a6162128e58b32.png','Sterilization Zone')">
+                    <div class="gallery-card-img">
+                        <img src="../assets/images/6056468a6ce6a37a659748db37a6162128e58b32.png"
+                            alt="Sterilization Zone" loading="lazy">
+                    </div>
+                    <div class="gallery-card-body">
+                        <span class="card-tag">Equipment</span>
+                        <h3>Advanced Equipment</h3>
+                        <p>World-class sterilization zone — adhering to the highest hygiene standards at our Ranchi
+                            dental clinic.</p>
+                    </div>
+                </div>
+
+                <!-- 6: Rotary Endodontics -->
+                <div class="gallery-card" data-category="equipment"
+                    onclick="openLightbox('../assets/images/66b775bee61c484f2d766b29b77558971571e37e.png','Rotary Endodontics')">
+                    <div class="gallery-card-img">
+                        <img src="../assets/images/66b775bee61c484f2d766b29b77558971571e37e.png"
+                            alt="Rotary Endodontics" loading="lazy">
+                    </div>
+                    <div class="gallery-card-body">
+                        <span class="card-tag">Equipment</span>
+                        <h3>Advanced Equipment</h3>
+                        <p>Painless root canal in Ranchi using state-of-the-art rotary endodontic technology.</p>
+                    </div>
+                </div>
+
+                <!-- 7: Dr. Barun Kant -->
+                <div class="gallery-card" data-category="patient-care"
+                    onclick="openLightbox('../assets/images/doctors/Dr. Barun Kant.png','Dr. Barun Kant')">
+                    <div class="gallery-card-img">
+                        <img src="../assets/images/doctors/Dr. Barun Kant.png" alt="Dr. Barun Kant" loading="lazy">
+                    </div>
+                    <div class="gallery-card-body">
+                        <span class="card-tag">Happy Patients</span>
+                        <h3>Dr. Vinit Raj, BDS</h3>
+                        <p>Chief Dentist &amp; Founder of Raj Dental Hospital — 10+ years serving patients across
+                            Ranchi.</p>
+                    </div>
+                </div>
+
+                <!-- 8: Dr. Kamana Vijay Rai -->
+                <div class="gallery-card" data-category="patient-care"
+                    onclick="openLightbox('../assets/images/doctors/Dr.KamanaVijayRai.png','Dr. Kamana Vijay Rai')">
+                    <div class="gallery-card-img">
+                        <img src="../assets/images/doctors/Dr.KamanaVijayRai.png" alt="Dr. Kamana Vijay Rai"
+                            loading="lazy">
+                    </div>
+                    <div class="gallery-card-body">
+                        <span class="card-tag">Happy Patients</span>
+                        <h3>Our Committed Team</h3>
+                        <p>Our trained dental staff at Raj Dental Hospital, Ranchi — dedicated to your comfort and care.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== VALUE PROPS ===== -->
+    <section class="value-section">
+        <div class="value-inner">
+            <h2>Ranchi's Modern Dental Hospital for Superior Care</h2>
+            <div class="value-cards">
+                <div class="value-card">
+                    <svg class="value-card-icon" viewBox="0 0 24 24" fill="none" stroke="#10b77f" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M9 12l2 2 4-4" />
+                        <path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <h4>100% Hygienic</h4>
+                    <p>Strict sterilization protocols for every patient interaction.</p>
+                </div>
+                <div class="value-card">
+                    <svg class="value-card-icon" viewBox="0 0 24 24" fill="none" stroke="#10b77f" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="3" width="20" height="14" rx="2" />
+                        <line x1="8" y1="21" x2="16" y2="21" />
+                        <line x1="12" y1="17" x2="12" y2="21" />
+                    </svg>
+                    <h4>Latest Tech</h4>
+                    <p>Equipped with digital diagnostics for faster, accurate results.</p>
+                </div>
+                <div class="value-card">
+                    <svg class="value-card-icon" viewBox="0 0 24 24" fill="none" stroke="#10b77f" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" />
+                    </svg>
+                    <h4>Patient First</h4>
+                    <p>Designed to provide a relaxing environment for all ages.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== DARK CTA ===== -->
+    <div class="gallery-cta-wrap">
+        <div class="gallery-cta">
+            <h2>Ready to Experience the Best Dental Care in Ranchi?</h2>
+            <p>Schedule your visit to Raj Dental Hospital today. Dr. Vinit Raj and our team will help you achieve a
+                healthy, confident smile. Serving patients across Ranchi, Jharkhand.</p>
+            <div class="cta-btns">
+                <a href="tel:+919334001999" class="btn-cta-green">Call to Book Now</a>
+                <a href="index.html#book" class="btn-cta-ghost">Contact Us</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-col">
+                    <div class="nav-brand" style="margin-bottom: 0;">
+                        <img src="../assets/images/953196547354cf94a3b4b38155a605d28f735e7d.svg" alt="Logo"
+                            class="nav-brand-icon">
+                        <div class="nav-brand-text">
+                            <div class="brand-title">Raj <span>Dental</span></div>
+                        </div>
+                    </div>
+                    <p class="footer-desc">Raj Dental Hospital provides quality, painless, and affordable dental care to
+                        the families of Ranchi. Led by Dr. Vinit Raj with 10+ years of experience. Your smile is our
+                        priority.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <svg class="social-icon" viewBox="0 0 24 24" fill="#10b77f">
+                                <path
+                                    d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878V14.89h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="#10b77f" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                            </svg>
+                        </a>
+                        <a href="https://wa.me/919334001999" class="social-link" aria-label="WhatsApp">
+                            <svg class="social-icon" viewBox="0 0 24 24" fill="#10b77f">
+                                <path
+                                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-col footer-links">
+                    <h4 class="footer-subtitle">Quick Links</h4>
+                    <div class="footer-nav">
+                        <a href="about.html">About Us</a>
+                        <a href="index.html#services">Our Services</a>
+                        <a href="why-choose-us.html">Why Choose Us</a>
+                        <a href="gallery.html">Gallery</a>
+                        <a href="index.html#reviews">Patient Reviews</a>
+                    </div>
+                </div>
+                <div class="footer-col footer-contact">
+                    <h4 class="footer-subtitle">Contact Info</h4>
+                    <div class="contact-list">
+                        <div class="contact-item">
+                            <svg class="contact-icon" viewBox="0 0 24 24" fill="#10b77f">
+                                <path
+                                    d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                            </svg>
+                            <div class="contact-text">Krishna Market, HB Road, Booty More, Ranchi, Jharkhand 834012
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="#10b77f" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z" />
+                            </svg>
+                            <div class="contact-text">+91 93340 01999</div>
+                        </div>
+                        <div class="contact-item">
+                            <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="#10b77f" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="4" width="20" height="16" rx="2" />
+                                <polyline points="2,4 12,13 22,4" />
+                            </svg>
+                            <div class="contact-text">info@rajdentalhospital.com</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2025 Raj Dental Hospital, Ranchi. All Rights Reserved.</span>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== LIGHTBOX ===== -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+        <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close">✕</button>
+        <img class="lightbox-img" id="lightboxImg" src="" alt="">
+        <div class="lightbox-caption" id="lightboxCaption"></div>
+    </div>
+
+    <script>
+        // ===== Filter Logic =====
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const cards = document.querySelectorAll('.gallery-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const filter = btn.dataset.filter;
+                cards.forEach(card => {
+                    if (filter === 'all' || card.dataset.category === filter) {
+                        card.style.display = '';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // ===== Lightbox Logic =====
+        function openLightbox(src, caption) {
+            document.getElementById('lightboxImg').src = src;
+            document.getElementById('lightboxCaption').textContent = caption;
+            document.getElementById('lightbox').classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeLightbox(e) {
+            if (!e || e.target === document.getElementById('lightbox') || e.target.classList.contains('lightbox-close')) {
+                document.getElementById('lightbox').classList.remove('open');
+                document.body.style.overflow = '';
+            }
+        }
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+
+</body>
+
+</html>

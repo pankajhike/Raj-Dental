@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why Choose Raj Dental Hospital | Best Dentist in Ranchi</title>
+    <meta name="description"
+        content="Discover why thousands of patients in Ranchi trust Raj Dental Hospital — experienced dentist Dr. Vinit Raj, advanced technology, strict hygiene, affordable pricing, and easy appointment booking.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        /* ===== WHY CHOOSE US PAGE STYLES ===== */
+
+        /* Hero */
+        .wcu-hero {
+            position: relative;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            margin-top: 81px;
+        }
+
+        .wcu-hero-bg {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+        }
+
+        .wcu-hero-bg img {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 171.16%;
+            top: -35.58%;
+            object-fit: cover;
+            max-width: none;
+        }
+
+        .wcu-hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(15, 23, 42, 0.6), rgba(15, 23, 42, 0.8));
+        }
+
+        .wcu-hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 896px;
+            padding: 0 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            align-items: center;
+        }
+
+        .wcu-badge {
+            display: inline-flex;
+            background: rgba(16, 183, 127, 0.2);
+            border: 1px solid rgba(16, 183, 127, 0.3);
+            backdrop-filter: blur(2px);
+            padding: 7px 17px;
+            border-radius: 9999px;
+        }
+
+        .wcu-badge span {
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            font-size: 12px;
+            color: #10b77f;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+        }
+
+        .wcu-hero-content h1 {
+            font-family: 'Inter', sans-serif;
+            font-weight: 900;
+            font-size: 60px;
+            line-height: 60px;
+            color: #fff;
+            margin: 0;
+        }
+
+        .wcu-hero-content h1 span {
+            color: #10b77f;
+        }
+
+        .wcu-hero-content p {
+            font-family: 'Inter', sans-serif;
+            font-size: 20px;
+            line-height: 28px;
+            color: #e2e8f0;
+            max-width: 672px;
+            margin: 0;
+        }
+
+        /* Section wrapper */
+        .wcu-section {
+            padding: 96px 32px;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        /* Section header */
+        .wcu-section-header {
+            text-align: center;
+            margin-bottom: 64px;
+        }
+
+        .wcu-section-header h2 {
+            font-family: 'Inter', sans-serif;
+            font-weight: 900;
+            font-size: 36px;
+            color: #0f172a;
+            margin-bottom: 12px;
+        }
+
+        .wcu-divider {
+            width: 80px;
+            height: 6px;
+            background: #10b77f;
+            border-radius: 9999px;
+            margin: 0 auto;
+        }
+
+        /* Advantages Grid — 3 col / 2 row */
+        .advantages-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+
+        .adv-card {
+            background: #fff;
+            border: 1px solid #f1f5f9;
+            border-radius: 24px;
+            padding: 32px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .adv-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .adv-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 16px;
+            background: rgba(16, 183, 127, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 32px;
+        }
+
+        .adv-icon svg {
+            width: 28px;
+            height: 28px;
+        }
+
+        .adv-card h3 {
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 28px;
+            color: #0f172a;
+            margin-bottom: 12px;
+        }
+
+        .adv-card p {
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            line-height: 26px;
+            color: #475569;
+        }
+
+        .adv-card p strong {
+            font-weight: 600;
+            color: #0f172a;
+        }
+
+        .adv-card p .highlight {
+            font-weight: 600;
+            color: #10b77f;
+        }
+
+        /* Equipment Showcase */
+        .equipment-section {
+            background: #f8fafc;
+            padding: 96px 32px;
+        }
+
+        .equipment-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: center;
+        }
+
+        .equipment-text h2 {
+            font-family: 'Inter', sans-serif;
+            font-weight: 900;
+            font-size: 36px;
+            line-height: 40px;
+            color: #0f172a;
+            margin-bottom: 16px;
+        }
+
+        .equipment-text>p {
+            font-family: 'Inter', sans-serif;
+            font-size: 18px;
+            line-height: 28px;
+            color: #475569;
+            margin-bottom: 32px;
+        }
+
+        .equip-list {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .equip-item {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+        }
+
+        .equip-bullet {
+            width: 40px;
+            height: 40px;
+            border-radius: 9999px;
+            background: #fff;
+            border: 1px solid #f1f5f9;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .equip-bullet svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .equip-item h4 {
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            font-size: 16px;
+            color: #0f172a;
+            margin-bottom: 4px;
+        }
+
+        .equip-item p {
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            line-height: 20px;
+            color: #64748b;
+        }
+
+        .equipment-photo-wrap {
+            position: relative;
+        }
+
+        .equipment-photo-bg {
+            position: absolute;
+            inset: -31.5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .equipment-photo-bg-inner {
+            width: 608px;
+            height: 608px;
+            border-radius: 16px;
+            background: rgba(16, 183, 127, 0.1);
+            transform: rotate(3deg);
+            flex-shrink: 0;
+        }
+
+        .equipment-photo {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+            aspect-ratio: 1 / 1;
+        }
+
+        .equipment-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Safety Protocols */
+        .safety-section {
+            padding: 80px 32px;
+            background: #fff;
+        }
+
+        .safety-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+            background: #fff;
+            border: 1px solid #f1f5f9;
+            border-radius: 24px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+            padding: 65px;
+            display: flex;
+            gap: 48px;
+            align-items: center;
+        }
+
+        .safety-text {
+            flex-shrink: 0;
+            width: 280px;
+        }
+
+        .safety-text h2 {
+            font-family: 'Inter', sans-serif;
+            font-weight: 900;
+            font-size: 30px;
+            line-height: 36px;
+            color: #0f172a;
+            margin-bottom: 16px;
+        }
+
+        .safety-text p {
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            line-height: 24px;
+            color: #475569;
+            margin-bottom: 24px;
+        }
+
+        .iso-badge {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .iso-badge svg {
+            width: 22px;
+            height: 22px;
+        }
+
+        .iso-badge span {
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            font-size: 16px;
+            color: #10b77f;
+        }
+
+        .safety-steps {
+            flex: 1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .safety-step {
+            background: #f8fafc;
+            border-radius: 24px;
+            padding: 16px;
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+        }
+
+        .step-num {
+            font-family: 'Inter', sans-serif;
+            font-weight: 900;
+            font-size: 20px;
+            line-height: 28px;
+            color: #10b77f;
+            flex-shrink: 0;
+            min-width: 28px;
+        }
+
+        .safety-step p {
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 20px;
+            color: #334155;
+        }
+
+        /* CTA */
+        .wcu-cta-wrap {
+            background: #f8fafc;
+            padding: 0 32px 80px;
+        }
+
+        .wcu-cta {
+            max-width: 1024px;
+            margin: 0 auto;
+            background: #10b981;
+            border-radius: 24px;
+            padding: 64px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(16, 185, 129, 0.2);
+        }
+
+        .wcu-cta::before {
+            content: '';
+            position: absolute;
+            top: -64px;
+            right: -64px;
+            width: 256px;
+            height: 256px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            filter: blur(32px);
+        }
+
+        .wcu-cta::after {
+            content: '';
+            position: absolute;
+            bottom: -64px;
+            left: -64px;
+            width: 256px;
+            height: 256px;
+            border-radius: 50%;
+            background: rgba(15, 23, 42, 0.1);
+            filter: blur(32px);
+        }
+
+        .wcu-cta h2 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 800;
+            font-size: 40px;
+            line-height: 48px;
+            color: #fff;
+            margin-bottom: 16px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .wcu-cta p {
+            font-family: 'Inter', sans-serif;
+            font-size: 18px;
+            line-height: 28px;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 600px;
+            margin: 0 auto 32px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .btn-cta-dark {
+            background: #0f172a;
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            font-size: 18px;
+            padding: 16px 40px;
+            border-radius: 24px;
+            text-decoration: none;
+            display: inline-block;
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+            transition: opacity 0.2s;
+        }
+
+        .btn-cta-dark:hover {
+            opacity: 0.9;
+            color: #fff;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .advantages-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .equipment-inner {
+                grid-template-columns: 1fr;
+            }
+
+            .equipment-photo-bg {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .advantages-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .safety-inner {
+                flex-direction: column;
+                padding: 40px 24px;
+            }
+
+            .safety-text {
+                width: 100%;
+            }
+
+            .wcu-hero-content h1 {
+                font-size: 40px;
+                line-height: 1.1;
+            }
+
+            .wcu-cta {
+                padding: 40px 24px;
+            }
+
+            .wcu-cta h2 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <img src="../assets/images/953196547354cf94a3b4b38155a605d28f735e7d.svg" alt="Raj Dental Hospital"
+                    class="nav-brand-icon">
+                <div class="nav-brand-text">
+                    <div class="brand-title">Raj <span>Dental</span></div>
+                    <div class="brand-subtitle">Booty More, Ranchi</div>
+                </div>
+            </div>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="index.html#services" class="nav-link">Services</a>
+                <a href="why-choose-us.html" class="nav-link" style="color: #10b77f; font-weight: 700;">Why Us</a>
+                <a href="gallery.html" class="nav-link">Gallery</a>
+                <a href="index.html#reviews" class="nav-link">Reviews</a>
+                <a href="index.html#book" class="btn-book-now">Book Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== HERO SECTION ===== -->
+    <section class="wcu-hero">
+        <div class="wcu-hero-bg" aria-hidden="true">
+            <img src="../assets/images/f7d68bf50423a480a8ea5afb573d19720e3c6007.png" alt="">
+        </div>
+        <div class="wcu-hero-overlay"></div>
+        <div class="wcu-hero-content">
+            <div class="wcu-badge"><span>Trusted Dental Hospital in Ranchi</span></div>
+            <h1>Why Patients Choose<br><span>Raj Dental Hospital</span></h1>
+            <p>Experienced, affordable, and completely painless dental care led by Dr. Vinit Raj, BDS — with 10+ years
+                of trusted clinical excellence in Booty More, Ranchi.</p>
+        </div>
+    </section>
+
+    <!-- ===== KEY ADVANTAGES GRID ===== -->
+    <section style="background: #f8fafc;">
+        <div class="wcu-section">
+            <div class="wcu-section-header">
+                <h2>Our Key Advantages</h2>
+                <div class="wcu-divider"></div>
+            </div>
+            <div class="advantages-grid">
+
+                <!-- 1. Expertise -->
+                <div class="adv-card">
+                    <div class="adv-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#10b77f" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                            <path d="M6 12v5c3 3 9 3 12 0v-5" />
+                        </svg>
+                    </div>
+                    <h3>Experienced Dentist in Ranchi</h3>
+                    <p>Led by <strong>Dr. Vinit Raj, BDS</strong> with over 10 years of dental excellence and
+                        specialized clinical skills in root canal treatment, implants, and cosmetic dentistry.</p>
+                </div>
+
+                <!-- 2. Technology -->
+                <div class="adv-card">
+                    <div class="adv-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#10b77f" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <rect x="2" y="3" width="20" height="14" rx="2" />
+                            <line x1="8" y1="21" x2="16" y2="21" />
+                            <line x1="12" y1="17" x2="12" y2="21" />
+                        </svg>
+                    </div>
+                    <h3>Advanced Technology</h3>
+                    <p>Equipped with <strong>Digital X-rays</strong> and <strong>Rotary Endodontics</strong> for
+                        high-precision, faster procedures.</p>
+                </div>
+
+                <!-- 3. Hygiene -->
+                <div class="adv-card">
+                    <div class="adv-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#10b77f" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path d="M9 12l2 2 4-4" />
+                            <path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <h3>Hygiene &amp; Safety</h3>
+                    <p>Strict adherence to international sterilization protocols and multi-step disinfection for every
+                        patient's safety.</p>
+                </div>
+
+                <!-- 4. Affordability -->
+                <div class="adv-card">
+                    <div class="adv-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#10b77f" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <line x1="12" y1="1" x2="12" y2="23" />
+                            <path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6" />
+                        </svg>
+                    </div>
+                    <h3>Affordable Treatment</h3>
+                    <p>Transparent pricing with consultations starting at only <span class="highlight">₹200</span>.
+                        Quality dental care in Ranchi that fits every budget.</p>
+                </div>
+
+                <!-- 5. Patient Comfort -->
+                <div class="adv-card">
+                    <div class="adv-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#10b77f" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path
+                                d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" />
+                        </svg>
+                    </div>
+                    <h3>Friendly Staff &amp; Patient Comfort</h3>
+                    <p>Our warm, trained team is focused on reducing dental anxiety. We prioritize your comfort and
+                        ensure a painless, stress-free experience every time.</p>
+                </div>
+
+                <!-- 6. Convenience -->
+                <div class="adv-card">
+                    <div class="adv-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#10b77f" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                            <circle cx="12" cy="10" r="3" />
+                        </svg>
+                    </div>
+                    <h3>Easy Appointment Booking</h3>
+                    <p>Conveniently located at <strong>Krishna Market, Booty More, Ranchi</strong>. Call us or walk in —
+                        open <strong>7 days a week</strong> with flexible timings for your schedule.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== EQUIPMENT SHOWCASE ===== -->
+    <section class="equipment-section">
+        <div class="equipment-inner">
+            <!-- Left: Text -->
+            <div class="equipment-text">
+                <h2>Our Advanced Dental Equipment in Ranchi</h2>
+                <p>At Raj Dental Hospital, we invest in the latest dental technology to ensure more accurate diagnoses
+                    and minimally invasive, comfortable treatments for every patient.</p>
+
+                <div class="equip-list">
+                    <div class="equip-item">
+                        <div class="equip-bullet">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#10b77f" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h4>Digital RVG X-Rays</h4>
+                            <p>90% less radiation than traditional x-rays with instant high-definition results.</p>
+                        </div>
+                    </div>
+                    <div class="equip-item">
+                        <div class="equip-bullet">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#10b77f" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h4>Rotary Endodontics</h4>
+                            <p>Enabling faster, more comfortable, and highly successful Root Canal Treatments.</p>
+                        </div>
+                    </div>
+                    <div class="equip-item">
+                        <div class="equip-bullet">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#10b77f" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h4>Intraoral Cameras</h4>
+                            <p>See what the dentist sees. High-resolution imaging for transparent diagnosis.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Photo -->
+            <div class="equipment-photo-wrap">
+                <div class="equipment-photo-bg" aria-hidden="true">
+                    <div class="equipment-photo-bg-inner"></div>
+                </div>
+                <div class="equipment-photo">
+                    <img src="../assets/images/8ccac254224a590d95aa40607c6ff1d1fa3373bb.png"
+                        alt="Advanced Dental Equipment">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SAFETY PROTOCOLS ===== -->
+    <section class="safety-section">
+        <div class="safety-inner">
+            <!-- Left: Title + ISO badge -->
+            <div class="safety-text">
+                <h2>Your Safety,<br>Our Priority</h2>
+                <p>We follow a rigorous 5-step sterilization process to maintain a 100% sterile environment for every
+                    procedure.</p>
+                <div class="iso-badge">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#10b77f" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+                        <polyline points="22 4 12 14.01 9 11.01" />
+                    </svg>
+                    <span>ISO Standard Protocol</span>
+                </div>
+            </div>
+
+            <!-- Right: 6-step grid -->
+            <div class="safety-steps">
+                <div class="safety-step">
+                    <span class="step-num">01</span>
+                    <p>Autoclave Sterilization at 134°C for all instruments.</p>
+                </div>
+                <div class="safety-step">
+                    <span class="step-num">02</span>
+                    <p>Use of disposable kits &amp; surgical disposables only.</p>
+                </div>
+                <div class="safety-step">
+                    <span class="step-num">03</span>
+                    <p>Surface disinfection of chairs between every patient.</p>
+                </div>
+                <div class="safety-step">
+                    <span class="step-num">04</span>
+                    <p>Filtered water lines to prevent microbial buildup.</p>
+                </div>
+                <div class="safety-step">
+                    <span class="step-num">05</span>
+                    <p>HEPA filtered air circulation in all treatment rooms.</p>
+                </div>
+                <div class="safety-step">
+                    <span class="step-num">06</span>
+                    <p>Regular biological monitoring for sterilization quality.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <div class="wcu-cta-wrap">
+        <div class="wcu-cta">
+            <h2>Book Your Appointment at<br>Raj Dental Hospital, Ranchi</h2>
+            <p>Call us today and experience why Raj Dental Hospital is the most trusted dental clinic in Ranchi. Dr.
+                Vinit Raj and our team are ready to help.</p>
+            <a href="tel:+919334001999" class="btn-cta-dark">Call +91 93340 01999</a>
+        </div>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-col">
+                    <div class="nav-brand" style="margin-bottom: 0;">
+                        <img src="../assets/images/953196547354cf94a3b4b38155a605d28f735e7d.svg" alt="Logo"
+                            class="nav-brand-icon">
+                        <div class="nav-brand-text">
+                            <div class="brand-title">Raj <span>Dental</span></div>
+                        </div>
+                    </div>
+                    <p class="footer-desc">Raj Dental Hospital provides quality, painless, and affordable dental care in
+                        Ranchi — led by Dr. Vinit Raj (BDS) with 10+ years of experience. Your smile is our priority.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <svg class="social-icon" viewBox="0 0 24 24" fill="#10b77f">
+                                <path
+                                    d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878V14.89h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="#10b77f" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                            </svg>
+                        </a>
+                        <a href="https://wa.me/919334001999" class="social-link" aria-label="WhatsApp">
+                            <svg class="social-icon" viewBox="0 0 24 24" fill="#10b77f">
+                                <path
+                                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-col footer-links">
+                    <h4 class="footer-subtitle">Quick Links</h4>
+                    <div class="footer-nav">
+                        <a href="about.html">About Us</a>
+                        <a href="index.html#services">Our Services</a>
+                        <a href="why-choose-us.html">Why Choose Us</a>
+                        <a href="gallery.html">Gallery</a>
+                        <a href="index.html#reviews">Patient Reviews</a>
+                    </div>
+                </div>
+                <div class="footer-col footer-contact">
+                    <h4 class="footer-subtitle">Contact Info</h4>
+                    <div class="contact-list">
+                        <div class="contact-item">
+                            <svg class="contact-icon" viewBox="0 0 24 24" fill="#10b77f">
+                                <path
+                                    d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                            </svg>
+                            <div class="contact-text">Krishna Market, HB Road, Booty More, Ranchi, Jharkhand 834012
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="#10b77f" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z" />
+                            </svg>
+                            <div class="contact-text">+91 93340 01999</div>
+                        </div>
+                        <div class="contact-item">
+                            <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="#10b77f" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="4" width="20" height="16" rx="2" />
+                                <polyline points="2,4 12,13 22,4" />
+                            </svg>
+                            <div class="contact-text">info@rajdentalhospital.com</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2025 Raj Dental Hospital, Ranchi. All Rights Reserved.</span>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
