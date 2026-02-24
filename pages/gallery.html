@@ -437,6 +437,22 @@
                 line-height: 1.1;
             }
 
+            .gallery-hero {
+                padding: 80px 20px 60px;
+            }
+
+            .gallery-section {
+                padding: 60px 20px;
+            }
+
+            .value-section {
+                padding: 60px 20px;
+            }
+
+            .gallery-cta-wrap {
+                padding: 0 20px 48px;
+            }
+
             .gallery-grid {
                 grid-template-columns: 1fr;
             }
@@ -451,6 +467,21 @@
 
             .gallery-cta h2 {
                 font-size: 24px;
+            }
+
+            .value-section h2 {
+                font-size: 32px;
+                line-height: 1.2;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery-hero h1 {
+                font-size: 28px;
+            }
+
+            .gallery-card-img {
+                height: 220px;
             }
         }
     </style>
@@ -469,7 +500,7 @@
                     <div class="brand-subtitle">Booty More, Ranchi</div>
                 </div>
             </div>
-            <div class="nav-links">
+            <div class="nav-links" id="nav-links">
                 <a href="index.html" class="nav-link">Home</a>
                 <a href="about.html" class="nav-link">About</a>
                 <a href="index.html#services" class="nav-link">Services</a>
@@ -478,6 +509,12 @@
                 <a href="index.html#reviews" class="nav-link">Reviews</a>
                 <a href="index.html#book" class="btn-book-now">Book Now</a>
             </div>
+
+            <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </nav>
 
@@ -805,6 +842,20 @@
         }
         document.addEventListener('keydown', e => {
             if (e.key === 'Escape') closeLightbox();
+        });
+
+        // Hamburger menu
+        const hamburger = document.getElementById('nav-hamburger');
+        const navLinks = document.getElementById('nav-links');
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('open');
+            navLinks.classList.toggle('mobile-open');
+        });
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('open');
+                navLinks.classList.remove('mobile-open');
+            });
         });
     </script>
 

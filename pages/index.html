@@ -30,7 +30,7 @@
                 </div>
             </div>
 
-            <div class="nav-links">
+            <div class="nav-links" id="nav-links">
                 <a href="about.html" class="nav-link">About</a>
                 <a href="#services" class="nav-link">Services</a>
                 <a href="why-choose-us.html" class="nav-link">Why Us</a>
@@ -38,8 +38,15 @@
                 <a href="#reviews" class="nav-link">Reviews</a>
                 <a href="#book" class="btn-book-now">Book Now</a>
             </div>
+
+            <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </nav>
+
 
     <!-- Hero Section -->
     <section class="hero">
@@ -846,6 +853,22 @@
         </div>
     </footer>
 
+    <script>
+        const hamburger = document.getElementById('nav-hamburger');
+        const navLinks = document.getElementById('nav-links');
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('open');
+            navLinks.classList.toggle('mobile-open');
+        });
+        // Close menu when a link is clicked
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('open');
+                navLinks.classList.remove('mobile-open');
+            });
+        });
+    </script>
+
 </body>
 
-</html>
+</html>

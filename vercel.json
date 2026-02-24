@@ -9,11 +9,23 @@
             "destination": "/pages/about.html"
         },
         {
+            "source": "/about.html",
+            "destination": "/pages/about.html"
+        },
+        {
             "source": "/gallery",
             "destination": "/pages/gallery.html"
         },
         {
+            "source": "/gallery.html",
+            "destination": "/pages/gallery.html"
+        },
+        {
             "source": "/why-choose-us",
+            "destination": "/pages/why-choose-us.html"
+        },
+        {
+            "source": "/why-choose-us.html",
             "destination": "/pages/why-choose-us.html"
         }
     ]

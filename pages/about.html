@@ -662,11 +662,56 @@
             }
 
             .about-cta {
-                padding: 40px 24px;
+                padding: 40px 20px;
+                margin: 40px 16px;
             }
 
             .about-cta h2 {
+                font-size: 28px;
+                line-height: 36px;
+            }
+
+            .about-hero-content h1 {
                 font-size: 32px;
+                line-height: 1.15;
+            }
+
+            .about-hero-content p {
+                font-size: 16px;
+            }
+
+            .about-hero-actions {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn-hero-primary,
+            .btn-hero-ghost {
+                width: 100%;
+                text-align: center;
+            }
+
+            .about-hero {
+                height: auto;
+                min-height: 420px;
+                padding: 48px 0;
+            }
+
+            .doctor-name {
+                font-size: 28px;
+                line-height: 36px;
+            }
+
+            .vision-mission-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .vm-card {
+                padding: 28px 20px;
+            }
+
+            .values-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -685,7 +730,7 @@
                     <div class="brand-subtitle">Booty More, Ranchi</div>
                 </div>
             </div>
-            <div class="nav-links">
+            <div class="nav-links" id="nav-links">
                 <a href="index.html" class="nav-link">Home</a>
                 <a href="about.html" class="nav-link" style="color: #10b77f; font-weight: 700;">About</a>
                 <a href="index.html#services" class="nav-link">Services</a>
@@ -694,6 +739,12 @@
                 <a href="index.html#reviews" class="nav-link">Reviews</a>
                 <a href="index.html#book" class="btn-book-now">Book Now</a>
             </div>
+
+            <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </nav>
 
@@ -1057,6 +1108,20 @@
         </div>
     </footer>
 
+    <script>
+        const hamburger = document.getElementById('nav-hamburger');
+        const navLinks = document.getElementById('nav-links');
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('open');
+            navLinks.classList.toggle('mobile-open');
+        });
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('open');
+                navLinks.classList.remove('mobile-open');
+            });
+        });
+    </script>
 </body>
 
 </html>
